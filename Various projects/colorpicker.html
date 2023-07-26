@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<style>
+	.box{width:90vw;height:auto;align-items:center;display: flex;gap:20px;flex-wrap:wrap;}
+	.child{background:yellow;width:100px;height:100px;border:1px solid green;cursor:pointer;}
+	#box .add{border:2px solid black !important;background:red;}
+	
+</style>
+<body>
+
+<div class="box" id="box">
+	<span class="child"> 1</span>
+	<span class="child"> 2</span>
+	<span class="child"> 3</span>
+	<span class="child"> 4</span>
+	<span class="child" onclick="fun()"> +</span>
+</div>
+    <input type ="color" id="colorpicker">	
+	<script type="text/javascript">
+		
+
+
+function fun(){
+          
+          // insert new box
+          const parent = document.getElementById('box');
+          const newe=document.createElement("span");
+		  newe.classList.add('child');
+		  const second=parent.lastElementChild;
+		  parent.insertBefore(newe,second);
+          
+          // select box
+		  const child= document.querySelectorAll('.child');
+		  child.forEach(navItem => {
+          navItem.addEventListener('click', () => { 
+          child.forEach(navItem => {  
+          navItem.classList.remove('add');  });
+          navItem.classList.add('add');
+
+    }); });
+
+
+
+		 }
+
+
+         // select box
+		 const child= document.querySelectorAll('.child');
+		 child.forEach(navItem => {
+         navItem.addEventListener('click', () => {
+         child.forEach(navItem => {
+            navItem.classList.remove('add');
+         });
+         navItem.classList.add('add');
+
+         }); });
+
+          // fill color in div
+		 const target=document.getElementsByClassName("add");		 
+		 const colorpicker= document.getElementById("colorpicker");
+
+		 colorpicker.addEventListener('input',function(){
+
+		 	for(let i=0; i<target.length; i++){
+                   target[i].style.backgroundColor=colorpicker.value;
+		 	}
+
+		 	// we can also write 'target[0]' insted of writing full for loop....
+		 	//  i.e target[0].style.backgroundColor=colorpicker.value;
+
+		 	// because we have only one element in target variable
+
+		 	
+		 });	
+	</script>
+    </body>
+	</html>
+    
+
