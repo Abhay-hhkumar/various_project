@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<style>
+	body{display:flex;justify-content: center;align-items: center;}
+
+	h1{display:flex;background:pink;}
+	p{color:green;font-size:20rem;font-weight:10px;}
+</style>
+<body>
+
+	<h1> <p id="hours"></p> <p>:</p> <p id="minutes"></p><p>:</p> <p id="seconds"></p> </h1>
+	
+	</body>
+	<script>
+		let h=0;
+		let m=0;
+		let s=0;
+
+		document.getElementById("hours").innerHTML=h;
+		document.getElementById("minutes").innerHTML=m;
+        document.getElementById("seconds").innerHTML=s;
+		
+		setInterval(fun,1000);
+
+		function fun(){
+			if(s<=58){
+				
+					s +=1;
+					document.getElementById("seconds").innerHTML=s;
+													
+			    }else{
+
+			    s=0;    document.getElementById("seconds").innerHTML=s;
+
+			    if(m<=58){
+				m += 1; document.getElementById("minutes").innerHTML=m;
+
+			    }else{
+
+				m=0;    document.getElementById("minutes").innerHTML=m;
+                h += 1; document.getElementById("hours").innerHTML=h;
+				}
+			}}
+
+
+
+	</script>
+	</html>
+

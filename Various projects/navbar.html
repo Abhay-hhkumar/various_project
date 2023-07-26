@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+<head>
+	<style>
+		*{margin:0;padding:0;}
+		.parent{display:flex;justify-content:center; align-items:center;background:pink;
+		   height:100vh;}
+		   .parent ul{display:flex;justify-content:space-around;align-items:center;width:80%;background-color:orange;height:100px;}
+		   .parent ul li{background:green;padding:40px;}
+		   .parent ul .active{background:red;}
+	</style>
+</head>
+<body>	
+	<div class="parent">
+	<ul class="jh">
+		<li  class="but"><p>ahello</p></li>
+		<li class="but "><p>a</p></li>
+		<li class="but "><p>a</p></li>
+		<li class="but "><p>a</p></li>
+	</ul></div>
+	</body>
+	<script type="text/javascript">
+
+		const navItems = document.querySelectorAll('.but');
+  navItems.forEach(navItem => {
+    navItem.addEventListener('click', () => {
+        navItems.forEach(navItem => {
+            navItem.classList.remove('active');
+        });
+        navItem.classList.add('active');
+
+    });
+
+});</script></html>

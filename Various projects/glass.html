@@ -1,0 +1,41 @@
+<!Doctype html>
+<html>
+    <style>
+        .song{display:flex;
+            justify-content: center;align-items:center;
+            
+            width:100%;
+            height:100vh;
+            background-image:url("1.png");
+        }
+        .jame{
+            width:20%;
+
+            height:80%;
+            background-color:rgba(255,255,255,0.1);
+
+            transform-style:preserve-3d;
+            backdrop-filter:blur(30px);}
+
+           
+    </style>
+    <body>
+        <div class="song">
+            <div class="jame" id="juhi"></div>
+        </div>
+        
+        <script>
+            var form=document.getElementById('juhi');
+            form.addEventListener('mousemove', (e) =>{
+                var x=(window.innerWidth / 2 - e.pageX) / 12;
+                var y=(window.innerHeight / 2 - e.pageY) / 12;
+                form.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
+            
+            });
+            form.addEventListener('mouseleave',  function(){
+                form.style.transform= 'rotateX(0deg) rotateY(0deg)';
+
+            });
+            </script>
+    </body>
+</html>
